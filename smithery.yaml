@@ -1,0 +1,47 @@
+displayName: OpenAI MCP Server
+description: Model Context Protocol server for OpenAI API integration. Provides tools for chat completions, embeddings, image generation, text-to-speech, transcription, and content moderation.
+author: A5O1
+homepage: https://github.com/yourusername/mcp-openai
+license: MIT
+
+configSchema:
+  type: object
+  properties:
+    openaiApiKey:
+      type: string
+      title: OpenAI API Key
+      description: Your OpenAI API key (starts with sk-)
+      sensitive: true
+  required:
+    - openaiApiKey
+
+envMap:
+  openaiApiKey: OPENAI_API_KEY
+
+tools:
+  - name: openai_chat_completion
+    description: Create chat completions with GPT-4 and other models
+  - name: openai_create_embedding
+    description: Generate embeddings for semantic search
+  - name: openai_list_models
+    description: List all available OpenAI models
+  - name: openai_get_model
+    description: Get details about a specific model
+  - name: openai_create_image
+    description: Generate images with DALL-E
+  - name: openai_create_speech
+    description: Convert text to speech with TTS models
+  - name: openai_create_transcription
+    description: Transcribe audio with Whisper
+  - name: openai_moderate_content
+    description: Moderate content for safety
+
+tags:
+  - openai
+  - gpt
+  - chat
+  - embeddings
+  - dall-e
+  - whisper
+  - tts
+  - moderation
